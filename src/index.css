@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #4b5966;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.item{
+  box-shadow: 0 0 3px #272727;
+  background: #3d3d3d;
+  border-radius: 10px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.description_box {
+  position: relative;
+  overflow-y: hidden;
+  background: #383838;
+  border-radius: 0 0 10px 10px;
+}
+.image_box{
+  width: 100%;
+  height: 300px;
+}
+.image_box > img{
+  width: 100%;
+}
+.item:hover .image_box img {
+  opacity: 0.8;
+  transition: opacity 0.15s ease-out;
+}
+.title_box {
+  background: #272727;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 10px 10px 0 0;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 12px;
+  height: 25px;
+  z-index: 2;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  background: linear-gradient(#fff,#f0f0f0);
+  padding: 2px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.title {
+  height: 25px;
+  line-height: 24px;
+  right: 0;
+  margin: 15px 10px;
+  z-index: 2;
+  position: absolute;
+  font-family: sofia_pro_lightregular;
+  font-size: 14px;
+  background: rgba(0,0,0,.7);
+  padding: 2px 5px;
+  color: white;
+}
+.background_image {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+  transition: height 0.15s ease-out;
+}
+
+.item:hover .background_image {
+  height: 56px;
+}
+
+.background_image > img{
+  min-width: 100%;
+  z-index: 1;
+}
+
+.description {
+  line-height: 20px;
+  height: 80px;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  opacity: .6;
+  padding: 0 5px;
+  margin: 56px 0 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.finish_txt {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 10px 0;
+}
+.finish_txt .error{
+  color: #900;
+}
+
+/* spin */
+.cover-spin {
+//display:none;
+}
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+.cover-spin::after {
+  content:'';
+  display:block;
+  width:40px;height:40px;
+  border-style:solid;
+  border-color:white;
+  border-top-color:transparent;
+  border-width: 4px;
+  border-radius:50%;
+  -webkit-animation: spin .8s linear infinite;
+  animation: spin .8s linear infinite;
+}
+
+
+@media (min-width: 479px) {
+  .item {
+    width: 48%;
+  }
+}
+@media (min-width: 639px) {
+  .item {
+    width: 31%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .item{
+    width: 23.9%;
+  }
+}
